@@ -23,19 +23,22 @@ Osazení není složité, není tam žádná záludnost.
 
 Programy pro GAL jsem kompiloval pomocí Wincurl
 
-Driver pro ovládání RTC obvodu je psán v ASM a přeložen pomocí NASM
+Driver pro ovládání RTC obvodu je psán v ASM a přeložen pomocí NASM. Použití driveru je v config.sys
+device=c:\ibm\dsclock.sys 0x240
+Driver ještě není úplně hotov, v originál byly nějaké chyby, ty jsem upravil, ale ještě to musím doladit. Driver funguje jak s RTC tak gameportem 
 
 Pár fotek z projektu
-![rtc7](https://github.com/user-attachments/assets/f145c380-9755-40e9-94e6-5a5e6a110987)
-![rtc6](https://github.com/user-attachments/assets/9734a088-53b7-4616-b7cc-abdc777a827f)
-![rtc5](https://github.com/user-attachments/assets/b63085b2-44ef-4949-b006-0e90560cf58b)
+![rtc1](https://github.com/user-attachments/assets/96d01788-2fb6-4262-b954-b4a0ba77a517)
+![rtc2](https://github.com/user-attachments/assets/5bd82b7f-a29e-481f-a63c-f595b514e8e8)
 ![rtc4](https://github.com/user-attachments/assets/7d08d716-1c16-4986-93d1-36ae1502f4d4)
-
+![rtc5](https://github.com/user-attachments/assets/b63085b2-44ef-4949-b006-0e90560cf58b)
+![rtc6](https://github.com/user-attachments/assets/9734a088-53b7-4616-b7cc-abdc777a827f)
+![rtc7](https://github.com/user-attachments/assets/f145c380-9755-40e9-94e6-5a5e6a110987)
 
 https://github.com/user-attachments/assets/15338810-2ce5-4af2-8db0-e2d07ca02ab5
 
-![rtc2](https://github.com/user-attachments/assets/5bd82b7f-a29e-481f-a63c-f595b514e8e8)
-![rtc1](https://github.com/user-attachments/assets/96d01788-2fb6-4262-b954-b4a0ba77a517)
+
+
 
 
 Inspirace byla v těchto projektech na github
