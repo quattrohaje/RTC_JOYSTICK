@@ -1,0 +1,36 @@
+# Berkeley PLA format generated using
+#
+# CUPL(WM)        5.0a Serial# 60008009
+# Device          g16v8s  Library DLIB-h-40-9
+# Created         Tue Dec 10 18:39:55 2024
+# Name            RTC 
+# Partno          00 
+# Revision        01 
+# Date            07.12.2024 
+# Designer        Engineer 
+# Company         quattro 
+# Assembly        None 
+# Location        
+#
+# Inputs  A0 A1 A2 A3 
+#         A4 A5 A6 A7 
+#         A8 A9 AEN AS0 
+#         AS1 IOR IOW RTCALE 
+#         RTCRD RTCWR 
+# Outputs RTCALE !RTCRD !RTCWR 
+.i 18
+.o 3
+.p 12
+0-00111000011-0--- 1~~
+0-00001001001-0--- 1~~
+0-00001101010-0--- 1~~
+0-00001011000-0--- 1~~
+1-001110000110---- ~1~
+1-000010010010---- ~1~
+1-000011010100---- ~1~
+1-000010110000---- ~1~
+1-00111000011-0--- ~~1
+1-00001001001-0--- ~~1
+1-00001101010-0--- ~~1
+1-00001011000-0--- ~~1
+.end

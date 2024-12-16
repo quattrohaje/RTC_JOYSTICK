@@ -1,0 +1,58 @@
+Name     RTC ;
+PartNo   00 ;
+Date     07.12.2024 ;
+Revision 01 ;
+Designer Engineer ;
+Company  quattro ;
+Assembly None ;
+Location  ;
+Device   G16V8 ;
+
+
+/* *************** INPUT PINS *********************/
+Pin	1	= A0; 
+Pin	2	= A1; 
+Pin	3	= A2; 
+Pin	4	= A3; 
+Pin	5	= A4; 
+Pin	6	= A5; 
+Pin	7	= A6; 
+Pin	8	= A7; 
+Pin	9	= A8; 
+Pin	11	= A9; 
+Pin	12	= IOW; 
+Pin	13	= IOR; 
+Pin	17	= AEN; 
+Pin	18	= AS1; 
+Pin	19	= AS0; 
+
+/* *************** OUTPUT PINS *********************/
+Pin	14	= RTCWR; 
+Pin	15	= RTCALE; 
+Pin	16	= RTCRD; 
+
+!RTCRD = ( !A9 & !A8 & !A7 &  A6 &  A5 &  A4 & !A3 & !A2 &  A0 & !IOR & !AEN &  AS1 &  AS0 )
+ 	# (  A9 & !A8 & !A7 &  A6 & !A5 & !A4 & !A3 & !A2 &  A0 & !IOR & !AEN &  AS1 & !AS0 )
+ 	# (  A9 & !A8 &  A7 &  A6 & !A5 & !A4 & !A3 & !A2 &  A0 & !IOR & !AEN & !AS1 &  AS0 )
+	# (  A9 &  A8 & !A7 &  A6 & !A5 & !A4 & !A3 & !A2 &  A0 & !IOR & !AEN & !AS1 & !AS0 );
+
+!RTCWR = ( !A9 & !A8 & !A7 &  A6 &  A5 &  A4 & !A3 & !A2 &  A0 & !IOW & !AEN &  AS1 &  AS0 )
+ 	# (  A9 & !A8 & !A7 &  A6 & !A5 & !A4 & !A3 & !A2 &  A0 & !IOW & !AEN &  AS1 & !AS0 )
+ 	# (  A9 & !A8 &  A7 &  A6 & !A5 & !A4 & !A3 & !A2 &  A0 & !IOW & !AEN & !AS1 &  AS0 )
+ 	# (  A9 &  A8 & !A7 &  A6 & !A5 & !A4 & !A3 & !A2 &  A0 & !IOW & !AEN & !AS1 & !AS0 );
+RTCALE = ( !A9 & !A8 & !A7 &  A6 &  A5 &  A4 & !A3 & !A2 & !A0 & !IOW & !AEN &  AS1 &  AS0 )
+ 	# (  A9 & !A8 & !A7 &  A6 & !A5 & !A4 & !A3 & !A2 & !A0 & !IOW & !AEN &  AS1 & !AS0 )
+ 	# (  A9 & !A8 &  A7 &  A6 & !A5 & !A4 & !A3 & !A2 & !A0 & !IOW & !AEN & !AS1 &  AS0 )
+ 	# (  A9 &  A8 & !A7 &  A6 & !A5 & !A4 & !A3 & !A2 & !A0 & !IOW & !AEN & !AS1 & !AS0 );
+
+/*
+DESCRIPTION
+
+
+This is the logic for decoding the port address and generating control signals
+used by the RTC based on DS12885.
+- 0x070: (AS0 = 1, AS1 = 1): /A9 & /A8 & /A7 & A6 &  A5 &  A4 & /A3 & /A2
+- 0x240: (AS0 = 0, AS1 = 1):  A9 & /A8 & /A7 & A6 & /A5 & /A4 & /A3 & /A2
+- 0x2C0: (AS0 = 1, AS1 = 0):  A9 & /A8 &  A7 & A6 & /A5 & /A4 & /A3 & /A2
+- 0x340: (AS0 = 0, AS1 = 1):  A9 &  A8 & /A7 & A6 & /A5 & /A4 & /A3 & /A2
+*/

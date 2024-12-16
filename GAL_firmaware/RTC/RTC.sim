@@ -1,0 +1,44 @@
+%SIGNAL
+PIN   1 =  A0 
+PIN   2 =  A1 
+PIN   3 =  A2 
+PIN   4 =  A3 
+PIN   5 =  A4 
+PIN   6 =  A5 
+PIN   7 =  A6 
+PIN   8 =  A7 
+PIN   9 =  A8 
+PIN  11 =  A9 
+PIN  17 =  AEN 
+PIN  19 =  AS0 
+PIN  18 =  AS1 
+PIN  13 =  IOR 
+PIN  12 =  IOW 
+PIN  15 =  RTCALE 
+PIN  16 =  RTCRD 
+PIN  14 =  RTCWR 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+RTCALE =>
+    !A0 & !A2 & !A3 & A4 & A5 & A6 & !A7 & !A8 & !A9 & !AEN & AS0 & AS1 & !IOW
+  # !A0 & !A2 & !A3 & !A4 & !A5 & A6 & !A7 & !A8 & A9 & !AEN & !AS0 & AS1 & !IOW
+  # !A0 & !A2 & !A3 & !A4 & !A5 & A6 & A7 & !A8 & A9 & !AEN & AS0 & !AS1 & !IOW
+  # !A0 & !A2 & !A3 & !A4 & !A5 & A6 & !A7 & A8 & A9 & !AEN & !AS0 & !AS1 & !IOW
+
+!RTCRD =>
+    A0 & !A2 & !A3 & A4 & A5 & A6 & !A7 & !A8 & !A9 & !AEN & AS0 & AS1 & !IOR
+  # A0 & !A2 & !A3 & !A4 & !A5 & A6 & !A7 & !A8 & A9 & !AEN & !AS0 & AS1 & !IOR
+  # A0 & !A2 & !A3 & !A4 & !A5 & A6 & A7 & !A8 & A9 & !AEN & AS0 & !AS1 & !IOR
+  # A0 & !A2 & !A3 & !A4 & !A5 & A6 & !A7 & A8 & A9 & !AEN & !AS0 & !AS1 & !IOR
+
+!RTCWR =>
+    A0 & !A2 & !A3 & A4 & A5 & A6 & !A7 & !A8 & !A9 & !AEN & AS0 & AS1 & !IOW
+  # A0 & !A2 & !A3 & !A4 & !A5 & A6 & !A7 & !A8 & A9 & !AEN & !AS0 & AS1 & !IOW
+  # A0 & !A2 & !A3 & !A4 & !A5 & A6 & A7 & !A8 & A9 & !AEN & AS0 & !AS1 & !IOW
+  # A0 & !A2 & !A3 & !A4 & !A5 & A6 & !A7 & A8 & A9 & !AEN & !AS0 & !AS1 & !IOW
+
+%END
