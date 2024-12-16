@@ -1,0 +1,29 @@
+%SIGNAL
+PIN   1 =  A0 
+PIN   2 =  A1 
+PIN   3 =  A2 
+PIN   4 =  A3 
+PIN   5 =  A4 
+PIN   6 =  A5 
+PIN   7 =  A6 
+PIN   8 =  A7 
+PIN   9 =  A8 
+PIN  11 =  A9 
+PIN  17 =  AEN 
+PIN  15 =  GP_OE 
+PIN  16 =  GP_TR 
+PIN  13 =  IOR 
+PIN  12 =  IOW 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+!GP_OE =>
+    A0 & !A1 & !A2 & !A3 & !A4 & !A5 & !A6 & !A7 & A9 & !AEN & !IOR
+
+!GP_TR =>
+    A0 & !A1 & !A2 & !A3 & !A4 & !A5 & !A6 & !A7 & A9 & !AEN & !IOW
+
+%END

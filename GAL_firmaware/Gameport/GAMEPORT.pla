@@ -1,0 +1,25 @@
+# Berkeley PLA format generated using
+#
+# CUPL(WM)        5.0a Serial# 60008009
+# Device          g16v8as  Library DLIB-h-40-2
+# Created         Sun Dec 08 13:59:00 2024
+# Name            Gameport 
+# Partno          00 
+# Revision        01 
+# Date            07.12.2024 
+# Designer        Engineer 
+# Company         quattro 
+# Assembly        None 
+# Location        
+#
+# Inputs  A0 A1 A2 A3 
+#         A4 A5 A6 A7 
+#         A8 A9 AEN GP_OE 
+#         GP_TR IOR IOW 
+# Outputs !GP_OE !GP_TR 
+.i 15
+.o 2
+.p 2
+10000000-10--0- 1~
+10000000-10---0 ~1
+.end

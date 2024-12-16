@@ -1,0 +1,40 @@
+Name     Gameport ;
+PartNo   00 ;
+Date     07.12.2024 ;
+Revision 01 ;
+Designer Engineer ;
+Company  quattro ;
+Assembly None ;
+Location  ;
+Device   G16V8a ;
+
+
+/* *************** INPUT PINS *********************/
+Pin	1	= A0; 
+Pin	2	= A1; 
+Pin	3	= A2; 
+Pin	4	= A3; 
+Pin	5	= A4; 
+Pin	6	= A5; 
+Pin	7	= A6; 
+Pin	8	= A7; 
+Pin	9	= A8; 
+Pin	11	= A9; 
+Pin	12	= IOW; 
+Pin	13	= IOR; 
+Pin	17	= AEN; 
+/* *************** OUTPUT PINS *********************/
+Pin	15	= GP_OE; 
+Pin	16	= GP_TR;
+
+!GP_OE	= A9 & !A7 & !A6 & !A5 & !A4 & !A3 & !A2 & !A1 & A0 & !AEN & !IOR ;
+!GP_TR	= A9 & !A7 & !A6 & !A5 & !A4 & !A3 & !A2 & !A1 & A0 & !AEN & !IOW ;
+
+/*
+DESCRIPTION
+
+
+This is the logic for decoding the port address and generating control signals
+used by Gameport.
+* 0x201:  A9 & !A7 & !A6 & !A5 & !A4 & !A3 & !A2 & !A1 & A0
+*/
