@@ -31,5 +31,6 @@ J2	DSUB15 female 90° PCB
 JMP1	jumper
 JMP2	jumper
 JMP3	jumper
+BT1   držák na baterii CR2032
 
 
